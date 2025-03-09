@@ -1,0 +1,24 @@
+def fib(max):
+   count = 0
+   mylist = []
+   while count < max:
+        if count == 0:
+            mylist.append(1)
+        if count == 1:
+            mylist.append(2)
+        if count > 1:
+            mylist.append(mylist[count - 1] + mylist[count - 2])
+        count += 1
+
+   for i in mylist:
+        yield i
+
+
+
+
+mygen = fib(100)
+print(mygen)
+count = 1
+for i in mygen:
+    print(f"count: {count}, num: {i}")
+    count += 1
